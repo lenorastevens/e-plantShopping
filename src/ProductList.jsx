@@ -252,11 +252,6 @@ function ProductList({ onHomeClick }) {
         setShowCart(false); // Hide the cart when navigating to About Us
     };
 
-    const handleContinueShopping = (e) => {
-        e.preventDefault();
-        setShowCart(false);
-    };
-
     const handleAddToCart = (plant) => {
         dispatch(addItem(plant));
         
@@ -318,7 +313,7 @@ function ProductList({ onHomeClick }) {
 
                 </div>
             ) : (
-                <CartItem onContinueShopping={handleContinueShopping} />
+                <CartItem onContinueShopping={() => setShowCart(false)} />
             )}
         </div>
     );
